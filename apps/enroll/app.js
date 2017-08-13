@@ -16,8 +16,8 @@ app.get( '/:tagId', function ( req, res ) {
 app.post( '/:tagId', function ( req, res ) {
 	console.log(req.body.email)
 	// send a linking email to the right email address
-	Membership.enrollTag({tag: req.params['tagId'], email: req.body.email}, function (err, result) {
-		if (result)
+	Membership.enrollTag( req.params['tagId'], req.body.email, function (err) {
+		if (!err)
 		{
 			res.render( 'enrolled' )
 		} else {
