@@ -13,7 +13,7 @@ var Membership = {
 			hash: Membership.hashCard( tag )
 		};
 
-		if ( Math.round( Math.random() ) == 1 ) valid = true;
+		if ( Math.round( Math.random() ) == 1 ) result.valid = true;
 
 		callback( result );
 	},
