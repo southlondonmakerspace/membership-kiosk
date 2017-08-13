@@ -13,6 +13,7 @@ var express = require( 'express' ),
 	app = express(),
 	http = require( 'http' ).Server( app ),
 	io = require( __js + '/socket' )( http ),
+	nfc = require( __js + '/nfc' )( io ),
 	app_loader = require( __js + '/app-loader' );
 
 // Use helmet
