@@ -23,6 +23,7 @@
     "helmet": "^3.5.0",
     "nfc-pcsc": "^0.6.0",
     "pug": "^2.0.0-beta11",
+    "query-string": "^5.0.0",
     "request": "^2.70.0",
     "socket.io": "^2.0.3"
   },

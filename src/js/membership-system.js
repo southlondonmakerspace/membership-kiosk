@@ -2,29 +2,59 @@ var __root = '../..';
 var __config = __root + '/config';
 
 var request = require( 'request' ),
+	queryString = require( 'query-string' ),
 	crypto = require( 'crypto' ),
 	config = require( __config + '/config.json' );
 
 var Membership = {
-	validate: function ( tag, callback ) {
+	queryString: function( url, params ) {
+		return url + '?' + queryString.stringify( params );
+	},
+	get: function( url, params, cb ) {
+		if ( typeof params === 'function' ) cb = params;
+		if ( typeof params !== 'object' ) params = {};
+		params.api_key = config['membership-system-api'].key;
+
+		var url = Membership.queryString( config['membership-system-api'].url + url, params );
+
+		// console.log( url );
+
+		var options = {
+			url: url
+		};
+
+		request( options, cb );
+	},
+	validate: function ( tag, cb ) {
+		var hash = Membership.hashCard( tag );
+
 		var result = {
 			valid: false,
 			tag: tag,
-			hash: Membership.hashCard( tag )
+			hash: hash
 		};
 
-		if ( Math.round( Math.random() ) == 1 ) result.valid = true;
-
-		callback( result );
+		Membership.get( '/validate/' + hash, {}, function( error, response, body ) {
+			if ( response.statusCode == '200 ') {
+				var output = JSON.parse( body );
+				if ( output.valid )
+					result.valid = true;
+			}
+			return cb( result );
+		} );
 	},
-	identify: function( hashedTag, callback ) {
-		var fake = {
-			firstname: "Joe",
-			lastname: "Bloggs",
-			member: true,
-			gravatar: "//www.gravatar.com/avatar/10db5a269f3eb33a0318dd7a3746409f?s=150&d=mm&r=g"
-		}
-		callback( fake );
+	identify: function( hash, cb ) {
+		var result = {};
+
+		Membership.get( '/identify/' + hash, {}, function( error, response, body ) {
+			if ( response.statusCode == '200 ') {
+				result = JSON.parse( body );
+			}
+			return cb( result );
+		} );
+	},
+	enroll: function( tag, email, cb ) {
+		cb( false ); // Returns error message or false for success
 	},
 	hashCard: function ( id ) {
 		var md5 = crypto.createHash( 'md5' );
