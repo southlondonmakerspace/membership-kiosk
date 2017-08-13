@@ -12,6 +12,7 @@ var express = require( 'express' ),
 	flash = require( 'express-flash' ),
 	app = express(),
 	http = require( 'http' ).Server( app ),
+	io = require( __js + '/socket' )( http ),
 	app_loader = require( __js + '/app-loader' );
 
 // Use helmet
@@ -38,6 +39,6 @@ app.set( 'view cache', false );
 app_loader( app );
 
 // Start server
-var listener = app.listen( config.port ,config.host, function () {
+var listener = http.listen( config.port, config.host, function () {
 	console.log( "Server started on: " + listener.address().address + ':' + listener.address().port );
 } );
