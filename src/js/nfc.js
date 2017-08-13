@@ -4,13 +4,13 @@
 // Example from "Reading and writing data" section of project's README
 // #############
 
-const NFC = require('nfc-pcsc').NFC
+const NFC = require('nfc-pcsc').NFC;
 
-var io
+var io;
 
 
 module.exports =  function( sio ) {
-	io = sio
+	io = sio;
 	const nfc = new NFC();
 
 	nfc.on('reader', function(reader) {
@@ -20,7 +20,7 @@ module.exports =  function( sio ) {
 		reader.on('card', function (card) {
 
 			console.log(`card detected`, card);
-			io.emit('card', card.uid)
+			io.emit('card', card.uid);
 
 		});
 

@@ -10,6 +10,7 @@ socket.on( 'hello', function() {
 
 socket.on ( 'card', function (card) {
 	console.log(card)
+	window.location.href ="/gateway/" + card
 })
 setInterval( function() {
 	socket.emit( 'oi', { hello: 'world' } );
