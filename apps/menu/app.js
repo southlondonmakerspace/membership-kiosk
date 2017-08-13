@@ -10,7 +10,7 @@ app.set( 'views', __dirname + '/views' );
 
 app.get( '/:hashId', function ( req, res ) {
 	Membership.identify(req.params['hashId'], function (identity) {
-		res.render( 'index' , {identity: identity} );
+		res.render( 'index' , {identity: identity, hash: req.params['hashId']} );
 	});
 } );
 

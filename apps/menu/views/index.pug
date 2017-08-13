@@ -2,4 +2,6 @@ extends ../../../src/views/base.pug
 
 block contents
 	h1 Membership Menu
+	img( src=identity.gravatar )
 	p Hello #{ identity.firstname } #{ identity.lastname }
+	a(href="/photoprint/" + hash ) Print member photo
