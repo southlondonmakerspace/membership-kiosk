@@ -20,7 +20,7 @@ module.exports =  function( sio ) {
 		reader.on('card', function (card) {
 
 			console.log(`card detected`, card);
-			io.emit('card', card)
+			io.emit('card', card.uid)
 
 		});
 
