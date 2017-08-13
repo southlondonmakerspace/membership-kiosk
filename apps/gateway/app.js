@@ -11,12 +11,12 @@ var	express = require( 'express' ),
 
 app.get( '/:tokenId', function ( req, res ) {
 	console.log("Gateway for " + req.params['tokenId']);
-	Membership.validate(req.params['tokenId'], function (result) {
-		if (result)
+	Membership.validate(req.params['tokenId'], function (result, tag) {
+		if (!result.valid)
 		{
-			res.redirect('/menu/' + req.params['tokenId']);
+			res.redirect('/enroll/' + result.tag);
 		} else {
-			res.redirect('/enroll/' + req.params['tokenId']);
+			res.redirect('/menu/' + result.hash);
 		}
 	})
 } );
