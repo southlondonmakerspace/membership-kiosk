@@ -53,6 +53,9 @@ var Membership = {
 			return cb( result );
 		} );
 	},
+	enroll: function( tag, email, cb ) {
+		cb( false ); // Returns error message or false for success
+	},
 	hashCard: function ( id ) {
 		var md5 = crypto.createHash( 'md5' );
 		md5.update( config.tag_salt );
