@@ -13,7 +13,7 @@
 	"tag_salt": "",
 	"audience": "http://localhost:3001",
 	"membership-system-api": {
-		"url": "https://localhost:3001/api/",
+		"url": "https://localhost:3001/api/kiosk",
 		"key": ""
 	},
 	"dev": true
