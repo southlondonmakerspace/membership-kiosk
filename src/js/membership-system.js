@@ -21,10 +21,10 @@ var Membership = {
 		var fake = {
 			firstname: "Joe",
 			lastname: "Bloggs",
-			member: true
-
+			member: true,
+			gravatar: "//www.gravatar.com/avatar/10db5a269f3eb33a0318dd7a3746409f?s=150&d=mm&r=g"
 		}
-
+		callback( fake );
 	},
 	hashCard: function ( id ) {
 		var md5 = crypto.createHash( 'md5' );
