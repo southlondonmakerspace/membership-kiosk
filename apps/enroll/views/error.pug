@@ -1,0 +1,11 @@
+extends ../../../src/views/base.pug
+
+block contents
+	h1 Whoops
+	p There was an error! Doh! 
+	span #{ error }
+	a(href="/") Go back
+	script.
+		setTimeout(function () {
+			window.location.href = "/"
+		},5000)

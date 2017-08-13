@@ -1,4 +1,13 @@
 extends ../../../src/views/base.pug
 
 block contents
-	p Enroll new tag
+	h1 Enroll a new tag
+	p You have presented a tag which is not known to us! 
+	p Enter your email here to link it to your Makerspace Account
+	form( method='POST' )
+		include ../../../src/views/partials/csrf.pug
+		div.form-group
+			label(for='email') Email:
+			input#email.form-control(type='text', placeholder='email address', name='email')
+		div.form-group
+			button(type='submit') Link to My Account

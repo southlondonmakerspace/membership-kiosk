@@ -1,0 +1,10 @@
+extends ../../../src/views/base.pug
+
+block contents
+	h1 Enrolling!
+	p Thanks! You will receive an email shortly with instructions on activating your new tag
+	a(href="/") Go back
+	script.
+		setTimeout(function () {
+			window.location.href = "/"
+		},5000)
