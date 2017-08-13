@@ -1,0 +1,6 @@
+extends ../../../src/views/base.pug
+
+block contents
+	h1 Lets print a member photo!
+	img( src=identity.gravatar )
+	p Hello #{ identity.firstname } #{ identity.lastname }
