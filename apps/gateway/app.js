@@ -11,7 +11,7 @@ var	express = require( 'express' ),
 
 app.get( '/:tokenId', function ( req, res ) {
 	console.log("Gateway for " + req.params['tokenId']);
-	Membership.validate(req.params['tokenId'], function (result, tag) {
+	Membership.validate(req.params['tokenId'], function (result) {
 		if (!result.valid)
 		{
 			res.redirect('/enroll/' + result.tag);
