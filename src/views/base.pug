@@ -1,0 +1,26 @@
+doctype html
+html
+	head
+		meta( charset="utf-8" )
+		meta( name="viewport", content="initial-scale=1.0, width=device-width" )
+		link( rel="shortcut icon" href="/imgs/favicon.ico" )
+		block title
+			title Kiosk
+		block head
+			block css
+				link( rel="stylesheet", href="/css/theme.min.css" )
+				link( rel="stylesheet", href="/css/style.css" )
+			block js
+				script( src="/js/jquery.js" )
+				script( src="/js/bootstrap.js" )
+				script( src="/js/script.js" )
+	body( class=( dev ? 'dev' : '' ) )
+		block body
+			.container
+				a( href="/" ).logo
+				include partials/flash.pug
+				block heading
+					if heading
+						.page-header
+							h2 #{ heading }
+				block contents
