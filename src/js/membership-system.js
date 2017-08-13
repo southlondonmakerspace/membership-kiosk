@@ -7,7 +7,7 @@ var request = require( 'request' ),
 
 var Membership = {
 	validate: function ( tag, callback ) {
-		return Math.round( Math.random() ) == 0 ? false : true;
+		callback( Math.round( Math.random() ) == 0 ? false : true );
 	},
 	hashCard: function ( id ) {
 		var md5 = crypto.createHash( 'md5' );
