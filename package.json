@@ -1,0 +1,37 @@
+{
+  "name": "membership-kiosk",
+  "version": "1.0.0",
+  "description": "Membership Kiosk for the South London Makerspace",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/southlondonmakerspace/membership-kiosk.git"
+  },
+  "author": "Tom Lynch + Chris Roberts",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/southlondonmakerspace/membership-kiosk/issues"
+  },
+  "homepage": "https://github.com/southlondonmakerspace/membership-kiosk#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "cookie-parser": "^1.4.0",
+    "csurf": "^1.9.0",
+    "express": "^4.13.3",
+    "express-flash": "0.0.2",
+    "express-session": "^1.12.1",
+    "helmet": "^3.5.0",
+    "pug": "^2.0.0-beta11",
+    "request": "^2.70.0"
+  },
+  "scripts": {
+    "start": "node app",
+    "watch-css": "catw -c 'lessc -' 'static/less/*.less' -o static/css/style.css -v",
+    "watch": "npm run watch-css"
+  },
+  "devDependencies": {
+    "less": "^2.5.3",
+    "catw": "^1.0.1",
+    "watchify": "^3.6.1"
+  }
+}

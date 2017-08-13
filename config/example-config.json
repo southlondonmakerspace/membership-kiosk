@@ -1,0 +1,40 @@
+{
+	"port": 3001,
+	"host": "127.0.0.1",
+	"secret": "abc123",
+	"session": "session",
+	"cookie": {
+		"secure": false,
+		"httpOnly": true,
+		"domain": "localhost",
+		"path": "/",
+		"maxAge": 267840000
+	},
+	"tag_salt": "",
+	"permission": {
+		"admin": "admin",
+		"superadmin": "superadmin",
+		"member": "member",
+		"access": "access"
+	},
+	"smtp": {
+		"from": "Organisation <email@example.com>",
+		"url": "smtp://username:password@smtp.example.com:587"
+	},
+	"mongo": "mongodb://localhost/membership-system",
+	"audience": "http://localhost:3001",
+	"discourse": {
+		"url": "https://discourse.example.org",
+		"api_username": "",
+		"api_key": ""
+	},
+	"gocardless": {
+		"access_token": "",
+		"secret": "",
+		"sandbox": true,
+		"port": 3002
+	},
+	"password-tries": 3,
+	"iterations": 50000,
+	"dev": true
+}
