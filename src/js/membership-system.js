@@ -50,6 +50,7 @@ var Membership = {
 			if ( response.statusCode == '200 ') {
 				result = JSON.parse( body );
 			}
+			console.log( result );
 			return cb( result );
 		} );
 	},
