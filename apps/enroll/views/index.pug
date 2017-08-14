@@ -1,13 +1,15 @@
 extends ../../../src/views/base.pug
 
 block contents
-	h1 Enroll a new tag
-	p You have presented a tag which is not known to us! 
-	p Enter your email here to link it to your Makerspace Account
-	form( method='POST' )
-		include ../../../src/views/partials/csrf.pug
-		div.form-group
-			label(for='email') Email:
-			input#email.form-control(type='text', placeholder='email address', name='email')
-		div.form-group
-			button(type='submit') Link to My Account
+	.row
+		.col-md-6
+			.page-header
+				h1 Enroll a new tag
+			p That tag isn't associated with a South London Makerspace account. Enter your email here to start the process of linking it to your Account
+			form( method='POST' )#enrollForm
+				include ../../../src/views/partials/csrf.pug
+				.form-group
+					label(for='email') Email:
+					input#email.form-control(type='text', placeholder='email address', name='email')
+				.form-group
+					button(role='button').btn.btn-primary Link to My Account
