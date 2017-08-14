@@ -6,7 +6,9 @@ var __views = __src + '/views';
 var __js = __src + '/js';
 
 var config = require( __config );
-
+if (config.dev) {
+	console.log("*** DEV MODE IS ON ***")
+}
 var express = require( 'express' ),
 	helmet = require( 'helmet' ),
 	flash = require( 'express-flash' ),
@@ -16,7 +18,7 @@ var express = require( 'express' ),
 	nfc = require( __js + '/nfc' )( io ),
 	app_loader = require( __js + '/app-loader' );
 
-// if in development mode, enable the test endpoints for simulating tags	
+// if in development mode, enable the test endpoints for simulating tags
 if (config.dev)
 {
 	test = require( __js + '/test')( app, io );
