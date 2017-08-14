@@ -1,7 +1,17 @@
 extends ../../../src/views/base.pug
 
 block contents
-	h1 Membership Menu
-	img( src=identity.gravatar )
-	p Hello #{ identity.firstname } #{ identity.lastname }
-	a(href="/photoprint/" + hash ) Print member photo
+	.row
+
+		.col-md-9
+			.page-header
+				h1 Hi, #{ identity.firstname } #{ identity.lastname }
+		.col-md-3
+			img( src=identity.gravatar )
+	.row
+		.col-md-12
+			.list-group
+					a(href="/photoprint/" + hash ).list-group-item.list-group-item-action Print member photo
+					a(href="/payment/" + hash ).list-group-item.list-group-item-action Pay for something
+					a(href="/reward/" + hash ).list-group-item.list-group-item-action Give Reward Points
+					a(href="/" ).list-group-item.list-group-item-action Log Out
