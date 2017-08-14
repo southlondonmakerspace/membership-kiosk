@@ -1,0 +1,16 @@
+extends ../../../src/views/base.pug
+
+block contents
+
+	.page-header
+		h1 Make a payment
+
+	h2 Ah, well... 
+	p Right now we can't take payments automatically through this kiosk. However, you can make a bank transfer to the following account and inform the directors
+	.list-group
+		.list-group-item
+			strong Account number: 
+			p #{ bank.account }
+		.list-group-item
+			strong Sort Code: 
+			p #{ bank.sort }
