@@ -5,8 +5,12 @@ block prepend title
 	- heading = "500: Server Error"
 
 block contents
-	p The server suffered an error.
+	p Something went horribly wrong. Sorry :/ 
 	if error
 		.page-header
 			h3 Error:
 			pre #{ error }
+	script.
+		setTimeout(function() {
+			window.location.href = "/"
+		},5000)

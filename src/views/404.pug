@@ -1,8 +1,12 @@
 extends base.pug
 
 block prepend title
-	- title = "Error 404"
-	- heading = "404: Page not found"
+	- title = "Whoops!"
+	- heading = "Whoops..."
 
 block contents
-	p The page or resource you were looking for was not found.
+	p That's not something that this kiosk can do yet! Sorry!
+	script.
+		setTimeout(function() {
+			window.location.href = "/"
+		},10000)
