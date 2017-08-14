@@ -16,6 +16,13 @@ var express = require( 'express' ),
 	nfc = require( __js + '/nfc' )( io ),
 	app_loader = require( __js + '/app-loader' );
 
+// if in development mode, enable the test endpoints for simulating tags	
+if (config.dev)
+{
+	test = require( __js + '/test')( app, io );
+}
+
+
 // Use helmet
 app.use( helmet() );
 
