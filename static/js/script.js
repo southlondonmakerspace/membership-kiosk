@@ -22,13 +22,16 @@ socket.on ( 'card', function (card) {
 		})
 	})
 })
-$('form').submit(function () {
-	console.log('hai!')
 
-})
 $(function() {
 	$('body').hide().fadeIn(400);
 	setTimeout(function () {
 		window.location.href = "/"
 	},5*60*1000) // timeout after 5 minutes
+	$('#enrollForm').submit(function (event) {
+		event.preventDefault();
+		$('.container').slideUp(800,function () {
+			$('#enrollForm').off('submit').submit()
+		})
+	})
 });
