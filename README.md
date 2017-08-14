@@ -53,3 +53,6 @@ Stub out your app structure within `app/`, this will include:
 
 
 Check out these files to get an idea of how each of these should be structure.
+
+## Sounds
+Sounds are from RCP dev_tones
