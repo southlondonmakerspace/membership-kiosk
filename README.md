@@ -1,6 +1,6 @@
 # Membership Kiosk
 
-![Membership kiosk](http://github.com/southlondonmakerspace/membership-kiosk/raw/master/doc/prototype1.gif)
+![Membership kiosk](https://github.com/southlondonmakerspace/membership-kiosk/raw/master/doc/prototype1.gif)
 
 This is a kiosk application for the [South London Makerspace Membership System](https://github.com/southlondonmakerspace/membership-system).  It is designed to be run on a physical machine inside the makerspace, allowing common tasks like enrolling new tags.  
 
