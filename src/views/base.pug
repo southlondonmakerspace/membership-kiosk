@@ -18,6 +18,7 @@ html
 				script( src="/js/script.js" )
 	body( class=( dev ? 'dev' : '' ) )
 		block body
+			div#secondsLeft &nbsp;
 			.container
 				a( href="/" ).logo
 				include partials/flash.pug
@@ -26,3 +27,4 @@ html
 						.page-header
 							h2 #{ heading }
 				block contents
+		
