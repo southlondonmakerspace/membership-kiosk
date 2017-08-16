@@ -55,7 +55,20 @@ var Membership = {
 		} );
 	},
 	enroll: function( tag, email, cb ) {
-		cb( false ); // Returns error message or false for success
+		Membership.get( '/enroll', {
+			tag: tag,
+			email: email
+		}, function( error, response, body ) {
+			if ( response.statusCode == '200 ') {
+				result = JSON.parse( body );
+				if ( result.error ) {
+					return cb( result.error );
+				} else {
+					return cb( false );
+				}
+			}
+			cb( 'Unknown error.' );
+		} );
 	},
 	hashCard: function ( id ) {
 		var md5 = crypto.createHash( 'md5' );
