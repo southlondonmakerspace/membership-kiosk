@@ -16,6 +16,8 @@ var express = require( 'express' ),
 	http = require( 'http' ).Server( app ),
 	io = require( __js + '/socket' )( http ),
 	nfc = require( __js + '/nfc' )( io ),
+	bunyan = require('bunyan'),
+	bunyanMiddlware = require('bunyan-middleware'),
 	app_loader = require( __js + '/app-loader' );
 
 // if in development mode, enable the test endpoints for simulating tags
@@ -24,6 +26,18 @@ if (config.dev)
 	test = require( __js + '/test')( app, io );
 }
 
+// Bunyan logging
+var requestLogger = bunyan.createLogger( {
+	name: 'Membership-Kiosk',
+	streams: [ {
+		type: "rotating-file",
+		path: "./access.log",
+		period: '1d', // rotates every day
+		count: 7 // keeps 7 days
+	} ]
+} );
+
+app.use( bunyanMiddleware( { logger: requestLogger } ) );
 
 // Use helmet
 app.use( helmet() );
