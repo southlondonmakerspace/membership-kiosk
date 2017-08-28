@@ -8,7 +8,7 @@ This system was created for [South London Makerspace](http://southlondonmakerspa
 
 ## Hardware Requirements
 
-Currently, we require an [ACR122U NFC reader](https://www.amazon.co.uk/Yosoo-ACR122U-Contactless-Reader-5xMifare/dp/B00GYPIZG6/ref=sr_1_1?ie=UTF8&qid=1502785757&sr=8-1&keywords=acr122u), or other PCSC compatible reader.  
+Currently, we require an [ACR122U NFC reader](https://www.amazon.co.uk/Yosoo-ACR122U-Contactless-Reader-5xMifare/dp/B00GYPIZG6/ref=sr_1_1?ie=UTF8&qid=1502785757&sr=8-1&keywords=acr122u)cd , or other PCSC compatible reader.  
 
 ## Setup
 
