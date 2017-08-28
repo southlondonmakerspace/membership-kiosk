@@ -17,7 +17,7 @@ var express = require( 'express' ),
 	io = require( __js + '/socket' )( http ),
 	nfc = require( __js + '/nfc' )( io ),
 	bunyan = require('bunyan'),
-	bunyanMiddlware = require('bunyan-middleware'),
+	bunyanMiddleware = require('bunyan-middleware'),
 	app_loader = require( __js + '/app-loader' );
 
 // if in development mode, enable the test endpoints for simulating tags
