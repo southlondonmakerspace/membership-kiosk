@@ -39,6 +39,9 @@ var requestLogger = bunyan.createLogger( {
 
 app.use( bunyanMiddleware( { logger: requestLogger } ) );
 
+// put socket.io in the app
+app.set( 'io', io );
+
 // Use helmet
 app.use( helmet() );
 
