@@ -20,5 +20,9 @@
 		"client_id": "myclientID",
 		"currency": "GBP"
 	},
+	"ssl":{
+		"key": "server.key",
+		"cert": "server.crt"
+	},
 	"dev": true
 }
