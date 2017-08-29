@@ -8,7 +8,7 @@ This system was created for [South London Makerspace](http://southlondonmakerspa
 
 ## Hardware Requirements
 
-Currently, we require an [ACR122U NFC reader](https://www.amazon.co.uk/Yosoo-ACR122U-Contactless-Reader-5xMifare/dp/B00GYPIZG6/ref=sr_1_1?ie=UTF8&qid=1502785757&sr=8-1&keywords=acr122u), or other PCSC compatible reader.  
+Currently, we require an [ACR122U NFC reader](https://www.amazon.co.uk/Yosoo-ACR122U-Contactless-Reader-5xMifare/dp/B00GYPIZG6/ref=sr_1_1?ie=UTF8&qid=1502785757&sr=8-1&keywords=acr122u)cd , or other PCSC compatible reader.  
 
 ## Setup
 
@@ -24,6 +24,9 @@ Then run the application itself
 
 The UI will be available at http://localhost:3000/
 
+## SSL
+
+In order for the payment callback to work, SSL is required (self signed is fine).  You'll need to create a private key and certificate, perhaps by following [this guide](https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs), and set the config options ssl.key and ssl.cert to the correct paths.
 
 ## Creating Apps
 The system is built around modular apps. If you're looking to add functionality to the site the best way to do this would by adding an app to the site rather than modifying it's base. This means you're unlikely to mess anything up.

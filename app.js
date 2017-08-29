@@ -12,9 +12,16 @@ if (config.dev) {
 var express = require( 'express' ),
 	helmet = require( 'helmet' ),
 	flash = require( 'express-flash' ),
+	fs = require('fs'),
 	app = express(),
-	http = require( 'http' ).Server( app ),
-	io = require( __js + '/socket' )( http ),
+	https = require( 'https' )
+
+var server = https.createServer({
+	key: fs.readFileSync(config.ssl.key),
+	cert: fs.readFileSync(config.ssl.cert)
+}, app);
+
+	var io = require( __js + '/socket' )( server ),
 	nfc = require( __js + '/nfc' )( io ),
 	bunyan = require('bunyan'),
 	bunyanMiddleware = require('bunyan-middleware'),
@@ -66,6 +73,6 @@ app.set( 'view cache', false );
 app_loader( app );
 
 // Start server
-var listener = http.listen( config.port, config.host, function () {
-	console.log( "Server started on: " + listener.address().address + ':' + listener.address().port );
+server.listen( config.port, function () {
+	console.log( "Server started on: " + server.address().address + ':' + server.address().port );
 } );
