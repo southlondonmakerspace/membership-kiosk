@@ -10,7 +10,6 @@ var	express = require( 'express' ),
 
 
 app.get( '/:tokenId', function ( req, res ) {
-	console.log("Gateway for " + req.params['tokenId']);
 	Membership.validate(req.params['tokenId'], function (result) {
 		if (!result.valid)
 		{
