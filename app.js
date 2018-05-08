@@ -14,7 +14,8 @@ var express = require( 'express' ),
 	flash = require( 'express-flash' ),
 	fs = require('fs'),
 	app = express(),
-	https = require( 'https' )
+	https = require( 'https' ),
+	http = require( 'http' )
 
 if (config.ssl)
 {
