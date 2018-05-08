@@ -6,6 +6,10 @@ block contents
 		.col-md-9
 			.page-header
 				h1 Hi, #{ identity.firstname } #{ identity.lastname }
+					if identity.isMember
+						span.badge.badge-success Member
+					else
+						span.badge.badge-danger Non-member
 		.col-md-3
 			img( src=identity.gravatar )
 	.row

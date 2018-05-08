@@ -35,7 +35,7 @@ var Membership = {
 		};
 
 		Membership.get( '/validate/' + hash, {}, function( error, response, body ) {
-			if ( response.statusCode == '200 ') {
+			if (!error && response.statusCode === 200 ) {
 				var output = JSON.parse( body );
 				if ( output.valid )
 					result.valid = true;
@@ -47,8 +47,10 @@ var Membership = {
 		var result = {};
 
 		Membership.get( '/identify/' + hash, {}, function( error, response, body ) {
-			if ( response.statusCode == '200 ') {
+			if ( !error && response.statusCode === 200) {
 				result = JSON.parse( body );
+			} else {
+				result = {'status':'error','msg': error }
 			}
 			console.log( result );
 			return cb( result );
@@ -59,7 +61,7 @@ var Membership = {
 			tag: tag,
 			email: email
 		}, function( error, response, body ) {
-			if ( response.statusCode == '200 ') {
+			if ( !error && response.statusCode === 200 ) {
 				result = JSON.parse( body );
 				if ( result.error ) {
 					return cb( result.error );

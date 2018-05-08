@@ -1,0 +1,21 @@
+doctype html
+html
+	head
+		meta( charset="utf-8" )
+		meta( name="viewport", content="initial-scale=1.0, width=device-width" )
+		link( rel="shortcut icon" href="/imgs/favicon.ico" )
+		block title
+			title Payment Terminal
+		block head
+			block css
+				link( rel="stylesheet", href="/css/theme.min.css" )
+				link( rel="stylesheet", href="/css/style.css" )
+			block js
+				script( src="/socket.io/socket.io.js" )
+				script( src="/js/jquery.js" )
+				script( src="/js/jquery.color.min.js")
+				script( src="/js/bootstrap.js" )
+				script( src="/js/payment-terminal.js" )
+	body( class=( dev ? 'dev' : '' ) )
+		.container
+			h1.text-center Waiting for payment details

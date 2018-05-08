@@ -16,5 +16,13 @@
 		"url": "https://localhost:3001/api/kiosk",
 		"key": ""
 	},
+	"squarepay": {
+		"client_id": "myclientID",
+		"currency": "GBP"
+	},
+	"ssl":{
+		"key": "server.key",
+		"cert": "server.crt"
+	},
 	"dev": true
 }
