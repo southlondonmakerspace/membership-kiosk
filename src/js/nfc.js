@@ -18,10 +18,7 @@ module.exports =  function( sio ) {
 		console.log(`${reader.reader.name}  device attached`);
 
 		reader.on('card', function (card) {
-
-			console.log(`card detected`, card);
 			io.emit('card', card.uid);
-
 		});
 
 		reader.on('error', function (err) {

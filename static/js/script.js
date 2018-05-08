@@ -25,7 +25,7 @@ socket.on ( 'card', function (card) {
 
 $(function() {
 	$('body').hide().fadeIn(400);
-
+	$('#secondsLeft').hide()
 	if (window.location.pathname != "/")
 	{
 		var totalSeconds = 25

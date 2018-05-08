@@ -4,7 +4,8 @@ block contents
 	h1 Whoops
 	p There was an error! Doh! Have another go
 	span #{ error }
-	a(href="/") Go back
+	.form-group
+		button(onclick="window.history.back()", role='button').btn.btn-primary Go back
 	script.
 		setTimeout(function () {
 			window.location.href = "/"

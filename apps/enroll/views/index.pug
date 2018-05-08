@@ -9,7 +9,7 @@ block contents
 			form( method='POST' )#enrollForm
 				include ../../../src/views/partials/csrf.pug
 				.form-group
-					label(for='email') Email:
-					input(type='text', placeholder='email address', name='email')#email.form-control
+					label(for='email')
+					input(type='text', placeholder='type your email address in and press enter', autofocus,autocomplete="off", name='email')#email.form-control
 				.form-group
 					button(role='button').btn.btn-primary Link to My Account
