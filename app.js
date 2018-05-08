@@ -16,10 +16,16 @@ var express = require( 'express' ),
 	app = express(),
 	https = require( 'https' )
 
-var server = https.createServer({
-	key: fs.readFileSync(config.ssl.key),
-	cert: fs.readFileSync(config.ssl.cert)
-}, app);
+if (config.ssl)
+{
+	var server = https.createServer({
+		key: fs.readFileSync(config.ssl.key),
+		cert: fs.readFileSync(config.ssl.cert)
+	}, app);
+} else {
+	var server = http.createServer(app);
+}
+
 
 	var io = require( __js + '/socket' )( server ),
 	nfc = require( __js + '/nfc' )( io ),
